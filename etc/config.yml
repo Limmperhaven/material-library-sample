@@ -1,0 +1,43 @@
+grpc:
+  host: "localhost"
+  port: 7070
+
+psql:
+  host: "localhost"
+  port: "5432"
+  user: "postgres"
+  pass: "postgres"
+  dbname: "library"
+  sslmode: "disable"
+  schema: "public"
+  blacklist:
+    - schema_migrations
+  max_idle_conns: 100
+  max_open_conns: 50
+
+jaeger:
+  title: "library"
+  url: "http://localhost:14268/api/traces"
+
+logger:
+  title: "library"
+  output: "stdout"
+  formatter: "text"
+  level: "trace"
+  is_caller: false
+  is_pretty: false
+
+permissions:
+  host: localhost
+  port: 50051
+  accessToken: somerandomkey
+
+s3:
+  accessKeyId: library
+  secretKey: library!
+  bucketName: materials
+  region: eu-west-2
+  endpoint: localhost:9000
+  publicEndpoint: http://127.0.0.1:9000
+  disableSSL: true # Default: false
+  fileNameSalt: CPIS_SALT
